@@ -1,0 +1,61 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br>
+        <br>
+        <br><br>
+        <br>         <br><br><br>
+        <br>         <br>
+
+      <h1>Welcome to Deepak's All In One App [AIOA]</h1>
+
+    </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+    <div align="center" class="col">
+        <br><br>
+        <br><br><br>
+        <br>
+      <div class="d-grid gap-2 col-8 mx-auto" role="group" aria-label="Basic mixed styles example">
+    <h1>You can use all the app only after login</h1>
+          <br>
+          {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+          <form method="POST" action="{% url 'login' %}">
+              {% csrf_token %}
+
+          <label>Username : </label> <input type="text" name='username' alt="username">
+              <br> <br>
+              <label>Password : </label> <input type="password" name = 'password' alt="password">
+              <br><br>
+              <button type="submit" class="btn btn-success btn-lg">Login</button>
+              <br> <br>
+          </form>
+
+          <form method="POST" action="{% url 'register1' %}">
+              {% csrf_token %}
+              <h5>Don't have an Account - click here to register</h5>
+              <button type="submit" class="btn btn-warning btn-lg">Register</button>
+          </form>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
